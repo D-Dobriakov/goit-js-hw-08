@@ -65,11 +65,13 @@ const images = [
 ];
 
 
+// Знаходимо список-контейнер
 const galleryContainer = document.querySelector('.gallery');
 
-// 1. Створення розмітки
+// Створюємо розмітку елементів галереї
 const markup = images
   .map(({ preview, original, description }) => {
+    // Використовуємо лише ті теги, що вказані у вашому шаблоні
     return `
     <li class="gallery-item">
       <a class="gallery-link" href="${original}">
@@ -84,6 +86,7 @@ const markup = images
   })
   .join('');
 
+// Додаємо розмітку в DOM за одну операцію
 galleryContainer.innerHTML = markup;
 
 // 2. Делегування та обробка кліку
